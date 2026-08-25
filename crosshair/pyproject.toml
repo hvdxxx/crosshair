@@ -1,0 +1,40 @@
+[project]
+name = "crosshair"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Afanasy",email = "128970784+hvdxxx@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "crosshair", from = "src"}]
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+isort = "^5.13.2"
+flake8 = "^7.1.1"
+
+[tool.poetry.scripts]
+crosshair = "crosshair.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["crosshair"]
+src_paths = ["src"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
